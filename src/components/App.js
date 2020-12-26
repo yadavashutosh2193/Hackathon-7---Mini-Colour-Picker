@@ -29,7 +29,7 @@ const App = () => {
     // updateSelectionStyle(nextBackground)
     selectNextBackground(updateSelectionStyle);
   }
-
+  // console.log(nextBackground.background);
   return (
     <div id="master">
       <h5 className="heading">{title}</h5>
@@ -39,15 +39,15 @@ const App = () => {
           <ColourSelector key={config.key} config={config} selectNextBackground={selectNextBackground} />
         ))}
       </div>
-
       <div className='row' id="children-wrapper">
         {
           ["selection1", "selection2", "selection3"].map(key => (
-            <Selection key={key} applyColor={applyColor}  selectionName = {key} backgc = {nextBackground}/>
+            <Selection key={key} applyColor={applyColor}  selectionName = {key} backgc = {nextBackground.background}/>
           ))
         }
       </div>
     </div>
+  
   )
 }
 
