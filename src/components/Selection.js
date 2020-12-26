@@ -5,7 +5,7 @@ function Selection(props){
     const [Backgroundcolor, setbackgroundColor] = useState({background:''});
     // console.log(Backgroundcolor);
     const DivClick = ()=>{
-        props.applyColor("green");
+        props.applyColor(props.backgc);
         setbackgroundColor({background: props.backgc})
     }
  return (<>
