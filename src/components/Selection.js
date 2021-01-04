@@ -5,8 +5,9 @@ function Selection(props){
     const [Backgroundcolor, setbackgroundColor] = useState({background:''});
     // console.log(Backgroundcolor);
     const applyColor = ()=>{
-        props.applyColor(props.backgc);
-        setbackgroundColor({background: props.backgc})
+        setbackgroundColor({background: props.backgc});
+        props.applyColor(Backgroundcolor.background);
+        
     }
  return (<>
      <div className = "fix-box" style = {{background: Backgroundcolor.background}} onClick={applyColor}>
