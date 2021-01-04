@@ -1,14 +1,23 @@
-
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "../styles/Child.css";
-function Selection(props){
-    const [Backgroundcolor, setbackgroundColor] = useState({background:''});
-    // // console.log(Backgroundcolor);
-     const apply = props.applyColor
- return (<>
-     <div className = "fix-box" style = {Backgroundcolor} onClick={()=>{apply(setbackgroundColor)}}>
-            <h2 className = "subheading">{props.selectionName}</h2>
-     </div>
- </>);
-}
+
+const Selection = (props) => {
+  const [state, setState] = useState({ background: "" });
+
+  const fun = props.applyColor;
+
+  return (
+    <div
+      className="fix-box"
+      style={state}
+      onClick={() => {
+        fun(setState);
+        console.log(state);
+      }}
+    >
+      <h2 className="subheading">Selection</h2>
+    </div>
+  );
+};
+
 export default Selection;
